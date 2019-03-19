@@ -1,7 +1,7 @@
 # ROUTING AN EXPRESS APP
 
 ## GitHub Repository Link
-- [Soure Repository] (https://github.com/pradeepkumartheegala/routingExpressApp routingExpressApp)
+- [Soure Repository] (https://github.com/pradeepkumartheegala/routingExpressApp)
 
 ## Team Slide
 - ![Team Slide] (https://github.com/pradeepkumartheegala/routingExpressApp/raw/master/teamSlide.png teamSlide)

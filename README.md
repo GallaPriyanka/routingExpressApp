@@ -1,10 +1,10 @@
 # ROUTING AN EXPRESS APP
 
 ## GitHub Repository Link
-[Soure Repository](https://github.com/pradeepkumartheegala/routingExpressApp routingExpressApp)
+- [Soure Repository] (https://github.com/pradeepkumartheegala/routingExpressApp routingExpressApp)
 
 ## Team Slide
-![Team Slide](https://github.com/pradeepkumartheegala/routingExpressApp/raw/master/teamSlide.png teamSlide)
+![Team Slide] (https://github.com/pradeepkumartheegala/routingExpressApp/raw/master/teamSlide.png teamSlide)
 
 ## Team Members
 1. Pradeepkumar Theegala

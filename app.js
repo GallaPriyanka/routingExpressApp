@@ -2,44 +2,42 @@ const express = require('express')
 const app = express()
 
 const hostname = '0.0.0.0'    // allows access from remote computers
-const port = 3002
+const port = 3002    
 
-app.get('/', function (req, res) {
-  res.send('Home page')
+//An Array of courses
+const course = [{ id: 1, courseName: 'course1' },{ id: 2, courseName: 'course2' },{ id: 3, courseName: 'course3' }]
+
+//Home page
+app.get('/', (req, res) => {
+  res.send('<h1><strong>WS5-Routing an Express App<strong><h1>')
 })
 
-app.get('/hello', (req, res) => {
-  res.send('Hello World!')
+// Finding all the courses
+app.get('/courses', (req, res) => {
+  res.send(course)
 })
 
-app.get('/big', (req, res) => {
-  res.send('<h1>Hello World!</h1>')
+// Finding course according to client request this takes paramaters
+app.get('/courses/:id', (req, res) => {
+  const c = (course.find(a => a.id === parseInt(req.params.id)))
+  if (!c) res.send('<strong>CourseID not Found!!!!</strong><br> Try Again....')
+  res.send(c)
 })
 
-app.get('/greeting/:id', (req, res) => {
-  res.send('Hello! The id was ' + req.params.id)
+//Routing with two parameters
+app.get('/greeting/:year/:id', (req, res) => {
+  res.send(req.params)
 })
-
-app.get('/yo/:buddy', (req, res) => {
-  res.send('<h1>Yo, ' + req.params.buddy + '!</h1>')
-})
-app.get('/welcome', (req, res) => {
-  res.send('<h1>Welcome to Web Application<h1>')
-})
-
-app.get('/:user/', (req, res) => {
-  res.send('<h1>Hello,' + req.params.user + '<h1><b><p>You entered name: ' + req.params.user)
-})
-
-
 
 // handle non-existant routes
 app.use((req, res, next) => {
-  res.status(404).send('<h1 style="color:red text-align:center">status 404 - that page was not found<h1>');
+  res.status(404).send('<h1>STATUS 404 - that page was not found<h1>');
 })
 
+
+//listening to the port 3002
 app.listen(port, hostname, () => {
-  console.log(`Example app listening at http://${hostname}:${port}/`)
+  console.log(`This app is  listening at http://${hostname}:${port}/`)
   console.log('Hit CTRL-C CTRL-C to stop\n')
 })
 
